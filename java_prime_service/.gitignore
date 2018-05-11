@@ -1,0 +1,6 @@
+hs_err_pid*
+.ash_history
+/build/
+/out/
+/.idea/
+/.gradle/

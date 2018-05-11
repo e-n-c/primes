@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  api:
+    build:
+      dockerfile: primes_service.Dockerfile
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - tomcat_access_log:/app/tomcat_access_log
+      - ./java_prime_service/build/libs/primes-0.0.1.jar:/app/app.jar
+  dev:
+    image: 'gradle:4.7.0-jdk8-alpine'
+    command: gradle --console=verbose build
+    volumes:
+      - ./java_prime_service:/home/gradle
+      - gradlecache:/home/gradle/.gradle
+  test:
+    image: 'gradle:4.7.0-jdk8-alpine'
+    command: gradle --console=verbose test
+    volumes:
+      - ./groovy_api_tests:/home/gradle
+      - gradlecache:/home/gradle/.gradle
+    depends_on:
+      - api
+volumes:
+  gradlecache:
+  tomcat_access_log:
