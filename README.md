@@ -8,8 +8,8 @@ To provide API that returns list of prime numbers.
 
 ## Implementation
 
-API is implemented in Java using Spring Boot. https://github.com/e-n-c/primes/blob/master/java_primes_service
-E2E test implemented in Groovy with Spock. https://github.com/e-n-c/primes/blob/master/groovy_api_tests
+API is implemented in Java using Spring Boot. https://github.com/e-n-c/primes/tree/master/java_prime_service
+E2E test implemented in Groovy with Spock.    https://github.com/e-n-c/primes/tree/master/groovy_api_tests
 
 ## Build and deploy
 
