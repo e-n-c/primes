@@ -10,6 +10,7 @@ public class EratosthenesPrimeGeneratorStrategy implements PrimeGeneratorInterfa
 
     private static final int MAX = 100000000;
 
+    @LogDuration
     @Override
     public List<Long> primesLessThan(Number limit) throws IllegalArgumentException {
         if (limit == null) {
